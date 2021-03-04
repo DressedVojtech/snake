@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(700.0f, 700.0f), "Snake 1.0");
+    sf::RenderWindow window(sf::VideoMode(650.0f, 650.0f), "Snake 1.0", sf::Style::Close | sf::Style::Titlebar);
 
     while(window.isOpen()) {
         sf::Event evnt;
@@ -14,7 +14,7 @@ int main() {
             }
         }
 
-    window.clear(sf::Color::White);
+    window.clear(sf::Color::Black);
     window.display();
     }
 
