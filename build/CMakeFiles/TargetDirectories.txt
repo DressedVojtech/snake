@@ -1,0 +1,3 @@
+/home/vk/cpp/SFMLProject/snake/build/CMakeFiles/rebuild_cache.dir
+/home/vk/cpp/SFMLProject/snake/build/CMakeFiles/edit_cache.dir
+/home/vk/cpp/SFMLProject/snake/build/CMakeFiles/snake.dir

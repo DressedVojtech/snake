@@ -1,5 +1,2 @@
 #Snake game
-
-##Subheader
-
-Nice
+This is my (yet) not completed attempt at creating a snake game.
