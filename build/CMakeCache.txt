@@ -20,9 +20,12 @@ CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
+//No help, variable specified on the command line.
+CMAKE_BUILDTYPE:UNINITIALIZED=Debug
+
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Debug
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -188,6 +191,12 @@ SFML_DIR:PATH=/usr/lib64/cmake/SFML
 
 //Path to a file.
 SFML_DOC_DIR:PATH=SFML_DOC_DIR-NOTFOUND
+
+//Value Computed by CMake
+Zizala_BINARY_DIR:STATIC=/home/vk/cpp/SFMLProject/snake/build
+
+//Value Computed by CMake
+Zizala_SOURCE_DIR:STATIC=/home/vk/cpp/SFMLProject/snake
 
 //Value Computed by CMake
 snake_BINARY_DIR:STATIC=/home/vk/cpp/SFMLProject/snake/build

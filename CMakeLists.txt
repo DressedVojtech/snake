@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 3.11)
 
-# Set the project name to your project name, my project isn't very descriptive
+
 project ( snake CXX )
 
 set (CMAKE_CXX_STANDARD 20)
