@@ -9,8 +9,14 @@
 /home/vk/cpp/SFMLProject/snake/main.cpp
 SFML/Graphics.hpp
 -
+iostream
+-
 vector
 -
 thread
+-
+ctime
+-
+stdlib.h
 -
 
