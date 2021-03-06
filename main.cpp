@@ -125,7 +125,9 @@ class snake {
             }
 
             if (snake[0].coords == seeApple()) {
-                snake.push_back({});
+                snake.push_back({
+                    .coords = sf::Vector2i(-2, -2)
+                });
                 setApple();
             }
         }
@@ -200,39 +202,31 @@ int main() {
     std::this_thread::sleep_for(std::chrono::milliseconds(1000/s.lenght()));
 
     window.clear(sf::Color::Black);
-    for (int i = areaSize; i > 0; i--) {
-        for (int j = areaSize; j > 0; j--) {
-            for (int a = s.lenght(); a >= 0 ;a--) {
-                if ((s.seeApple().x == i) && (s.seeApple().y == j)) {
-                    if (s.seeCurrent() == fruits::apple) {
-                        apple.setPosition(i * size, j * size);
-                        window.draw(apple);
-                    }
-                    if (s.seeCurrent() == fruits::banana) {
-                        banana.setPosition(i * size, j * size);
-                        window.draw(banana);
-                    }
-                    if (s.seeCurrent() == fruits::melon) {
-                        melon.setPosition(i * size, j * size);
-                        window.draw(melon);
-                    }
-                    if (s.seeCurrent() == fruits::orange) {
-                        orange.setPosition(i * size, j * size);
-                        window.draw(orange);
-                    }
-                    if (s.seeCurrent() == fruits::pineapple) {
-                        pineapple.setPosition(i * size, j * size);
-                        window.draw(pineapple);
-                    }
-                }
-                if ((s.body(a).x == i) && (s.body(a).y == j)) {
-                    body.setPosition(i * size, j * size);
-                    window.draw(body);
-                }
+    
+            if (s.seeCurrent() == fruits::apple) {
+            apple.setPosition(s.seeApple().x * size, s.seeApple().y * size);
+            window.draw(apple);
             }
-        }
-    }
+            if (s.seeCurrent() == fruits::banana) {
+            banana.setPosition(s.seeApple().x * size, s.seeApple().y * size);
+            window.draw(banana);
+            }
+            if (s.seeCurrent() == fruits::melon) {
+            melon.setPosition(s.seeApple().x * size, s.seeApple().y * size);
+            window.draw(melon);
+            }
+            if (s.seeCurrent() == fruits::orange) {
+            orange.setPosition(s.seeApple().x * size, s.seeApple().y * size);
+            window.draw(orange);
+            }
+            if (s.seeCurrent() == fruits::pineapple) {
+            pineapple.setPosition(s.seeApple().x * size, s.seeApple().y * size);
+            window.draw(pineapple);
+            }
+            for(int a = 0; a <= s.lenght(); a++) {
+            body.setPosition(s.body(a).x * size,s.body(a).y * size);
+            window.draw(body);
+            }
     window.display();
     }
-
 }
