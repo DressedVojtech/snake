@@ -7,6 +7,7 @@
 
 const float size = 20.0f;
 const int areaSize = 30;
+int score;
 
 enum class fruits {apple, banana, melon, orange, pineapple};
 //                  0       1       2       3       4
@@ -43,9 +44,10 @@ class snake {
             srand(time(0));
             int x = rand()%(areaSize-1);
             int y = rand()%(areaSize-1);
+
             apple.coords.x = x;
             apple.coords.y = y;
-            int current = rand()%4;
+            int current = rand()%5;
             switch (current) {
                 case 0:
                     apple.current = fruits::apple;
@@ -117,9 +119,10 @@ class snake {
             if(snake[0].coords.y < 0) {
                 snake[0].coords.y = (areaSize - 1);
             }
-            for (int i = (snake.size() + 1); i > 0; i--) {
+            for (int i = snake.size(); i > 0; i--) {
                 if (snake[i].coords == snake[0].coords) {
                     std::cout << "GAME OVER - your snake ate itself" << std::endl;
+                    std::cout << "YOUR SCORE IS: " << score << std::endl;
                     exit(0);
                 }
             }
@@ -129,6 +132,7 @@ class snake {
                     .coords = sf::Vector2i(-2, -2)
                 });
                 setApple();
+                score++;
             }
         }
 };
@@ -138,7 +142,7 @@ int main() {
     s.start(10, 10);
     sf::RenderWindow window(sf::VideoMode((areaSize * size), (areaSize * size)), "snake", sf::Style::Close | sf::Style::Titlebar);
     
-    sf::RectangleShape body(sf::Vector2f(size -1, size - 1));
+    sf::RectangleShape body(sf::Vector2f(size -3, size - 3));
     body.setFillColor(sf::Color::Green);
 
     sf::RectangleShape apple(sf::Vector2f(size, size));
@@ -171,10 +175,16 @@ int main() {
             switch(e.type) {
                 case sf::Event::Closed:
                     window.close();
+                    std::cout << "YOUR SCORE IS: " << score << std::endl;
                     break;
                 case sf::Event::KeyPressed:
                     switch(e.key.code) {
                         case sf::Keyboard::Key::W:
+                            if (s.direction() != directions::down) {
+                                s.setDir(directions::up);
+                            }
+                            break;
+                        case sf::Keyboard::Key::Up:
                             if (s.direction() != directions::down) {
                                 s.setDir(directions::up);
                             }
@@ -184,12 +194,27 @@ int main() {
                                 s.setDir(directions::down);
                             }
                             break;
+                        case sf::Keyboard::Key::Down:
+                            if (s.direction() != directions::up) {
+                                s.setDir(directions::down);
+                            }
+                            break;
                         case sf::Keyboard::Key::D:
                             if (s.direction() != directions::left) {
                                 s.setDir(directions::right);
                             }
                             break;
+                            case sf::Keyboard::Key::Right:
+                            if (s.direction() != directions::left) {
+                                s.setDir(directions::right);
+                            }
+                            break;
                         case sf::Keyboard::Key::A:
+                            if (s.direction() != directions::right) {
+                                s.setDir(directions::left);
+                            }
+                            break;
+                        case sf::Keyboard::Key::Left:
                             if (s.direction() != directions::right) {
                                 s.setDir(directions::left);
                             }
@@ -223,7 +248,7 @@ int main() {
             pineapple.setPosition(s.seeApple().x * size, s.seeApple().y * size);
             window.draw(pineapple);
             }
-            for(int a = 0; a <= s.lenght(); a++) {
+            for(int a = 0; a < s.lenght(); a++) {
             body.setPosition(s.body(a).x * size,s.body(a).y * size);
             window.draw(body);
             }
