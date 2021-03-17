@@ -6,7 +6,8 @@
 #include <stdlib.h>
 
 const float size = 20.0f;
-const int areaSize = 30;
+const int areaSize = 15;
+int cooldown = 1000;
 int score;
 
 enum class fruits {apple, banana, melon, orange, pineapple};
@@ -224,7 +225,10 @@ int main() {
         }
     s.move();
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000/s.lenght()));
+    std::this_thread::sleep_for(std::chrono::milliseconds(cooldown));
+    if (cooldown >= 100) {
+            cooldown -= 0.001 * cooldown;
+    }
 
     window.clear(sf::Color::Black);
     
