@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/vk/cpp/SFMLProject/snake/main.cpp
+/home/vk/cpp_dev/SFMLProject/snake/main.cpp
 SFML/Graphics.hpp
 -
 iostream

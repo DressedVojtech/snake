@@ -63,10 +63,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vk/cpp/SFMLProject/snake
+CMAKE_SOURCE_DIR = /home/vk/cpp_dev/SFMLProject/snake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vk/cpp/SFMLProject/snake/build
+CMAKE_BINARY_DIR = /home/vk/cpp_dev/SFMLProject/snake/build-linux
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -93,14 +93,14 @@ clean: CMakeFiles/snake.dir/clean
 CMakeFiles/snake.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vk/cpp/SFMLProject/snake/build/CMakeFiles --progress-num=1,2 "Built target snake"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vk/cpp_dev/SFMLProject/snake/build-linux/CMakeFiles --progress-num=1,2 "Built target snake"
 .PHONY : CMakeFiles/snake.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/snake.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vk/cpp/SFMLProject/snake/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vk/cpp_dev/SFMLProject/snake/build-linux/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/snake.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vk/cpp/SFMLProject/snake/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vk/cpp_dev/SFMLProject/snake/build-linux/CMakeFiles 0
 .PHONY : CMakeFiles/snake.dir/rule
 
 # Convenience name for target.

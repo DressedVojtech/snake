@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/snake.dir/main.cpp.o -o snake  /usr/lib/libsfml-graphics.so.2.5.1 /usr/lib/libsfml-window.so.2.5.1 /usr/lib/libsfml-system.so.2.5.1 
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/snake.dir/main.cpp.o -o snake  /usr/lib/libsfml-graphics.so.2.5.1 /usr/lib/libsfml-window.so.2.5.1 /usr/lib/libsfml-system.so.2.5.1 
